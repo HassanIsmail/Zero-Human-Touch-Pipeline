@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Todo</h1>
+      <span class="count" id="count">0 items left</span>
+    </header>
+
+    <form class="add-form" id="add-form">
+      <input
+        type="text"
+        id="todo-input"
+        class="todo-input"
+        placeholder="What needs to be done?"
+        autocomplete="off"
+        maxlength="200"
+      />
+      <button type="submit" class="btn-add">Add</button>
+    </form>
+
+    <ul class="todo-list" id="todo-list"></ul>
+
+    <p class="empty-state" id="empty-state">No todos yet. Add one above!</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

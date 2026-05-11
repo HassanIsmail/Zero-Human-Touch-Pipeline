@@ -1,0 +1,343 @@
+2026-05-12T00:00:36Z  DEBUG     git.cmd  [cmd.py:1286] — Popen(['git', 'version'], cwd=/home/clustox/Zero-Human-Touch-Pipeline, stdin=None, shell=False, universal_newlines=False)
+2026-05-12T00:00:36Z  DEBUG     git.cmd  [cmd.py:1286] — Popen(['git', 'version'], cwd=/home/clustox/Zero-Human-Touch-Pipeline, stdin=None, shell=False, universal_newlines=False)
+2026-05-12T00:00:36Z  INFO      __main__  [main.py:308] — Zero Human Touch Pipeline starting — polling every 5 minutes.
+2026-05-12T00:00:36Z  INFO      __main__  [main.py:268] — --- Pipeline run starting ---
+2026-05-12T00:00:36Z  DEBUG     pipeline.jira_client  [jira_client.py:39] — JiraClient initialised — project=ZHTPAI url=https://hasnibhutta95.atlassian.net
+2026-05-12T00:00:36Z  INFO      pipeline.jira_client  [jira_client.py:63] — Querying Jira for new stories — JQL: project = "ZHTPAI" AND labels = "ai-ready" AND status = "To Do"
+2026-05-12T00:00:36Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:00:37Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "POST /rest/api/3/search/jql HTTP/1.1" 200 None
+2026-05-12T00:00:37Z  INFO      pipeline.jira_client  [jira_client.py:75] — Found 1 new story/stories
+2026-05-12T00:00:37Z  INFO      __main__  [main.py:280] — Found 1 story/stories to process.
+2026-05-12T00:00:37Z  INFO      __main__  [main.py:76] — ======================================================================
+2026-05-12T00:00:37Z  INFO      __main__  [main.py:77] — Processing story: ZHTPAI-2 — [AI-PIPELINE] Todo App
+2026-05-12T00:00:37Z  INFO      __main__  [main.py:78] — ======================================================================
+2026-05-12T00:00:37Z  INFO      pipeline.jira_client  [jira_client.py:88] — Fetching attachments for ZHTPAI-2
+2026-05-12T00:00:37Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:00:38Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "GET /rest/api/3/issue/ZHTPAI-2?fields=attachment HTTP/1.1" 200 None
+2026-05-12T00:00:38Z  DEBUG     pipeline.jira_client  [jira_client.py:96] — ZHTPAI-2 has 1 attachment(s)
+2026-05-12T00:00:38Z  INFO      pipeline.jira_client  [jira_client.py:101] — Downloading requirements.md from ZHTPAI-2 (id=10033)
+2026-05-12T00:00:38Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:00:38Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "GET /rest/api/3/attachment/content/10033 HTTP/1.1" 303 None
+2026-05-12T00:00:38Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): api.media.atlassian.com:443
+2026-05-12T00:00:39Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://api.media.atlassian.com:443 "GET /file/b47dfae9-f232-4973-91cd-858dbe599306/binary?token=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI1OWQ2NzViYS05OWZjLTRkZjAtOGE0Ny1hZjQ5MmVkNTkyYmEiLCJhY2Nlc3MiOnsidXJuOmZpbGVzdG9yZTpmaWxlOmI0N2RmYWU5LWYyMzItNDk3My05MWNkLTg1OGRiZTU5OTMwNiI6WyJyZWFkIl19LCJleHAiOjE3Nzg1MjY2MzgsIm5iZiI6MTc3ODUyNjAzOH0.Fn16gSxjsRflgFBlsmQ1BDcgS-Q5tuxiPYzykM9b20M&client=59d675ba-99fc-4df0-8a47-af492ed592ba&dl=true&name=requirements.md HTTP/1.1" 200 676
+2026-05-12T00:00:39Z  DEBUG     pipeline.jira_client  [jira_client.py:128] — Fetching transitions for ZHTPAI-2
+2026-05-12T00:00:39Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:00:40Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "GET /rest/api/3/issue/ZHTPAI-2/transitions HTTP/1.1" 200 None
+2026-05-12T00:00:40Z  DEBUG     pipeline.jira_client  [jira_client.py:134] — Available transitions for ZHTPAI-2: ['11:To Do', '21:In Progress', '31:In Review', '41:Done']
+2026-05-12T00:00:40Z  INFO      pipeline.jira_client  [jira_client.py:180] — Transitioning ZHTPAI-2 to 'In Progress' via transition id=21 name='In Progress'
+2026-05-12T00:00:40Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:00:41Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "POST /rest/api/3/issue/ZHTPAI-2/transitions HTTP/1.1" 204 0
+2026-05-12T00:00:41Z  INFO      pipeline.jira_client  [jira_client.py:192] — Successfully transitioned ZHTPAI-2 → In Progress
+2026-05-12T00:00:41Z  INFO      __main__  [main.py:102] — Workspace: /home/clustox/Zero-Human-Touch-Pipeline/workspace/ZHTPAI-2
+2026-05-12T00:00:41Z  INFO      __main__  [main.py:147] — [ZHTPAI-2] Stage 2 — Building app with Claude…
+2026-05-12T00:00:41Z  INFO      pipeline.builder  [builder.py:135] — Building app in workspace: /home/clustox/Zero-Human-Touch-Pipeline/workspace/ZHTPAI-2
+2026-05-12T00:00:41Z  INFO      pipeline.builder  [builder.py:98] — Calling claude CLI (model=claude-sonnet-4-6)…
+2026-05-12T00:00:43Z  ERROR     __main__  [main.py:112] — Unhandled exception for ZHTPAI-2:
+Traceback (most recent call last):
+  File "/home/clustox/Zero-Human-Touch-Pipeline/main.py", line 109, in _process_story
+    _run_all_stages(jira, issue_key, summary, requirements, workspace_dir)
+  File "/home/clustox/Zero-Human-Touch-Pipeline/main.py", line 148, in _run_all_stages
+    app_files = builder.build_app(requirements, workspace_dir)
+  File "/home/clustox/Zero-Human-Touch-Pipeline/pipeline/builder.py", line 152, in build_app
+    response_text = _call_claude(_SYSTEM_PROMPT, user_message)
+  File "/home/clustox/Zero-Human-Touch-Pipeline/pipeline/builder.py", line 109, in _call_claude
+    raise RuntimeError(
+RuntimeError: claude CLI exited with code 1:
+
+
+2026-05-12T00:00:43Z  INFO      pipeline.jira_client  [jira_client.py:228] — Adding comment to ZHTPAI-2
+2026-05-12T00:00:43Z  DEBUG     pipeline.jira_client  [jira_client.py:229] — Comment text (first 200 chars): Pipeline error for ZHTPAI-2:
+
+RuntimeError: claude CLI exited with code 1:
+
+
+The story has been returned to To Do for retry.
+2026-05-12T00:00:43Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:00:44Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "POST /rest/api/3/issue/ZHTPAI-2/comment HTTP/1.1" 201 None
+2026-05-12T00:00:44Z  INFO      pipeline.jira_client  [jira_client.py:235] — Comment added to ZHTPAI-2
+2026-05-12T00:00:44Z  DEBUG     pipeline.jira_client  [jira_client.py:128] — Fetching transitions for ZHTPAI-2
+2026-05-12T00:00:44Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:00:44Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "GET /rest/api/3/issue/ZHTPAI-2/transitions HTTP/1.1" 200 None
+2026-05-12T00:00:44Z  DEBUG     pipeline.jira_client  [jira_client.py:134] — Available transitions for ZHTPAI-2: ['11:To Do', '21:In Progress', '31:In Review', '41:Done']
+2026-05-12T00:00:44Z  INFO      pipeline.jira_client  [jira_client.py:180] — Transitioning ZHTPAI-2 to 'To Do' via transition id=11 name='To Do'
+2026-05-12T00:00:44Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:00:45Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "POST /rest/api/3/issue/ZHTPAI-2/transitions HTTP/1.1" 204 0
+2026-05-12T00:00:45Z  INFO      pipeline.jira_client  [jira_client.py:192] — Successfully transitioned ZHTPAI-2 → To Do
+2026-05-12T00:00:45Z  INFO      __main__  [main.py:295] — --- Pipeline run complete ---
+2026-05-12T00:00:45Z  INFO      __main__  [main.py:318] — Scheduler active. Press Ctrl+C to stop.
+2026-05-12T00:02:58Z  DEBUG     git.cmd  [cmd.py:1286] — Popen(['git', 'version'], cwd=/home/clustox/Zero-Human-Touch-Pipeline, stdin=None, shell=False, universal_newlines=False)
+2026-05-12T00:02:58Z  DEBUG     git.cmd  [cmd.py:1286] — Popen(['git', 'version'], cwd=/home/clustox/Zero-Human-Touch-Pipeline, stdin=None, shell=False, universal_newlines=False)
+2026-05-12T00:02:58Z  INFO      __main__  [main.py:308] — Zero Human Touch Pipeline starting — polling every 5 minutes.
+2026-05-12T00:02:58Z  INFO      __main__  [main.py:268] — --- Pipeline run starting ---
+2026-05-12T00:02:58Z  DEBUG     pipeline.jira_client  [jira_client.py:39] — JiraClient initialised — project=ZHTPAI url=https://hasnibhutta95.atlassian.net
+2026-05-12T00:02:58Z  INFO      pipeline.jira_client  [jira_client.py:63] — Querying Jira for new stories — JQL: project = "ZHTPAI" AND labels = "ai-ready" AND status = "To Do"
+2026-05-12T00:02:58Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:02:59Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "POST /rest/api/3/search/jql HTTP/1.1" 200 None
+2026-05-12T00:02:59Z  INFO      pipeline.jira_client  [jira_client.py:75] — Found 1 new story/stories
+2026-05-12T00:02:59Z  INFO      __main__  [main.py:280] — Found 1 story/stories to process.
+2026-05-12T00:02:59Z  INFO      __main__  [main.py:76] — ======================================================================
+2026-05-12T00:02:59Z  INFO      __main__  [main.py:77] — Processing story: ZHTPAI-2 — [AI-PIPELINE] Todo App
+2026-05-12T00:02:59Z  INFO      __main__  [main.py:78] — ======================================================================
+2026-05-12T00:02:59Z  INFO      pipeline.jira_client  [jira_client.py:88] — Fetching attachments for ZHTPAI-2
+2026-05-12T00:02:59Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:02:59Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "GET /rest/api/3/issue/ZHTPAI-2?fields=attachment HTTP/1.1" 200 None
+2026-05-12T00:02:59Z  DEBUG     pipeline.jira_client  [jira_client.py:96] — ZHTPAI-2 has 1 attachment(s)
+2026-05-12T00:02:59Z  INFO      pipeline.jira_client  [jira_client.py:101] — Downloading requirements.md from ZHTPAI-2 (id=10033)
+2026-05-12T00:02:59Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:03:00Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "GET /rest/api/3/attachment/content/10033 HTTP/1.1" 303 None
+2026-05-12T00:03:00Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): api.media.atlassian.com:443
+2026-05-12T00:03:00Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://api.media.atlassian.com:443 "GET /file/b47dfae9-f232-4973-91cd-858dbe599306/binary?token=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI1OWQ2NzViYS05OWZjLTRkZjAtOGE0Ny1hZjQ5MmVkNTkyYmEiLCJhY2Nlc3MiOnsidXJuOmZpbGVzdG9yZTpmaWxlOmI0N2RmYWU5LWYyMzItNDk3My05MWNkLTg1OGRiZTU5OTMwNiI6WyJyZWFkIl19LCJleHAiOjE3Nzg1MjY3ODAsIm5iZiI6MTc3ODUyNjE4MH0.WCEPhAolUfpKTQdUbqY0bG6EzYVyqjrFP7_cV8jCCmk&client=59d675ba-99fc-4df0-8a47-af492ed592ba&dl=true&name=requirements.md HTTP/1.1" 200 676
+2026-05-12T00:03:00Z  DEBUG     pipeline.jira_client  [jira_client.py:128] — Fetching transitions for ZHTPAI-2
+2026-05-12T00:03:00Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:03:01Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "GET /rest/api/3/issue/ZHTPAI-2/transitions HTTP/1.1" 200 None
+2026-05-12T00:03:01Z  DEBUG     pipeline.jira_client  [jira_client.py:134] — Available transitions for ZHTPAI-2: ['11:To Do', '21:In Progress', '31:In Review', '41:Done']
+2026-05-12T00:03:01Z  INFO      pipeline.jira_client  [jira_client.py:180] — Transitioning ZHTPAI-2 to 'In Progress' via transition id=21 name='In Progress'
+2026-05-12T00:03:01Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:03:02Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "POST /rest/api/3/issue/ZHTPAI-2/transitions HTTP/1.1" 204 0
+2026-05-12T00:03:02Z  INFO      pipeline.jira_client  [jira_client.py:192] — Successfully transitioned ZHTPAI-2 → In Progress
+2026-05-12T00:03:02Z  INFO      __main__  [main.py:102] — Workspace: /home/clustox/Zero-Human-Touch-Pipeline/workspace/ZHTPAI-2
+2026-05-12T00:03:02Z  INFO      __main__  [main.py:147] — [ZHTPAI-2] Stage 2 — Building app with Claude…
+2026-05-12T00:03:02Z  INFO      pipeline.builder  [builder.py:135] — Building app in workspace: /home/clustox/Zero-Human-Touch-Pipeline/workspace/ZHTPAI-2
+2026-05-12T00:03:02Z  INFO      pipeline.builder  [builder.py:98] — Calling claude CLI (model=claude-sonnet-4-6)…
+2026-05-12T00:03:04Z  ERROR     __main__  [main.py:112] — Unhandled exception for ZHTPAI-2:
+Traceback (most recent call last):
+  File "/home/clustox/Zero-Human-Touch-Pipeline/main.py", line 109, in _process_story
+    _run_all_stages(jira, issue_key, summary, requirements, workspace_dir)
+  File "/home/clustox/Zero-Human-Touch-Pipeline/main.py", line 148, in _run_all_stages
+    app_files = builder.build_app(requirements, workspace_dir)
+  File "/home/clustox/Zero-Human-Touch-Pipeline/pipeline/builder.py", line 152, in build_app
+    response_text = _call_claude(_SYSTEM_PROMPT, user_message)
+  File "/home/clustox/Zero-Human-Touch-Pipeline/pipeline/builder.py", line 109, in _call_claude
+    raise RuntimeError(
+RuntimeError: claude CLI exited with code 1:
+
+
+2026-05-12T00:03:04Z  INFO      pipeline.jira_client  [jira_client.py:228] — Adding comment to ZHTPAI-2
+2026-05-12T00:03:04Z  DEBUG     pipeline.jira_client  [jira_client.py:229] — Comment text (first 200 chars): Pipeline error for ZHTPAI-2:
+
+RuntimeError: claude CLI exited with code 1:
+
+
+The story has been returned to To Do for retry.
+2026-05-12T00:03:04Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:03:05Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "POST /rest/api/3/issue/ZHTPAI-2/comment HTTP/1.1" 201 None
+2026-05-12T00:03:05Z  INFO      pipeline.jira_client  [jira_client.py:235] — Comment added to ZHTPAI-2
+2026-05-12T00:03:05Z  DEBUG     pipeline.jira_client  [jira_client.py:128] — Fetching transitions for ZHTPAI-2
+2026-05-12T00:03:05Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:03:05Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "GET /rest/api/3/issue/ZHTPAI-2/transitions HTTP/1.1" 200 None
+2026-05-12T00:03:05Z  DEBUG     pipeline.jira_client  [jira_client.py:134] — Available transitions for ZHTPAI-2: ['11:To Do', '21:In Progress', '31:In Review', '41:Done']
+2026-05-12T00:03:05Z  INFO      pipeline.jira_client  [jira_client.py:180] — Transitioning ZHTPAI-2 to 'To Do' via transition id=11 name='To Do'
+2026-05-12T00:03:05Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:03:06Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "POST /rest/api/3/issue/ZHTPAI-2/transitions HTTP/1.1" 204 0
+2026-05-12T00:03:06Z  INFO      pipeline.jira_client  [jira_client.py:192] — Successfully transitioned ZHTPAI-2 → To Do
+2026-05-12T00:03:06Z  INFO      __main__  [main.py:295] — --- Pipeline run complete ---
+2026-05-12T00:03:06Z  INFO      __main__  [main.py:318] — Scheduler active. Press Ctrl+C to stop.
+2026-05-12T00:03:40Z  INFO      __main__  [main.py:325] — Pipeline stopped by user (KeyboardInterrupt).
+2026-05-12T00:07:25Z  DEBUG     git.cmd  [cmd.py:1286] — Popen(['git', 'version'], cwd=/home/clustox/Zero-Human-Touch-Pipeline, stdin=None, shell=False, universal_newlines=False)
+2026-05-12T00:07:25Z  DEBUG     git.cmd  [cmd.py:1286] — Popen(['git', 'version'], cwd=/home/clustox/Zero-Human-Touch-Pipeline, stdin=None, shell=False, universal_newlines=False)
+2026-05-12T00:07:25Z  INFO      __main__  [main.py:308] — Zero Human Touch Pipeline starting — polling every 5 minutes.
+2026-05-12T00:07:25Z  INFO      __main__  [main.py:268] — --- Pipeline run starting ---
+2026-05-12T00:07:25Z  DEBUG     pipeline.jira_client  [jira_client.py:39] — JiraClient initialised — project=ZHTPAI url=https://hasnibhutta95.atlassian.net
+2026-05-12T00:07:25Z  INFO      pipeline.jira_client  [jira_client.py:63] — Querying Jira for new stories — JQL: project = "ZHTPAI" AND labels = "ai-ready" AND status = "To Do"
+2026-05-12T00:07:25Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:07:26Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "POST /rest/api/3/search/jql HTTP/1.1" 200 None
+2026-05-12T00:07:26Z  INFO      pipeline.jira_client  [jira_client.py:75] — Found 1 new story/stories
+2026-05-12T00:07:26Z  INFO      __main__  [main.py:280] — Found 1 story/stories to process.
+2026-05-12T00:07:26Z  INFO      __main__  [main.py:76] — ======================================================================
+2026-05-12T00:07:26Z  INFO      __main__  [main.py:77] — Processing story: ZHTPAI-2 — [AI-PIPELINE] Todo App
+2026-05-12T00:07:26Z  INFO      __main__  [main.py:78] — ======================================================================
+2026-05-12T00:07:26Z  INFO      pipeline.jira_client  [jira_client.py:88] — Fetching attachments for ZHTPAI-2
+2026-05-12T00:07:26Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:07:26Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "GET /rest/api/3/issue/ZHTPAI-2?fields=attachment HTTP/1.1" 200 None
+2026-05-12T00:07:26Z  DEBUG     pipeline.jira_client  [jira_client.py:96] — ZHTPAI-2 has 1 attachment(s)
+2026-05-12T00:07:26Z  INFO      pipeline.jira_client  [jira_client.py:101] — Downloading requirements.md from ZHTPAI-2 (id=10033)
+2026-05-12T00:07:26Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:07:27Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "GET /rest/api/3/attachment/content/10033 HTTP/1.1" 303 None
+2026-05-12T00:07:27Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): api.media.atlassian.com:443
+2026-05-12T00:07:28Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://api.media.atlassian.com:443 "GET /file/b47dfae9-f232-4973-91cd-858dbe599306/binary?token=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI1OWQ2NzViYS05OWZjLTRkZjAtOGE0Ny1hZjQ5MmVkNTkyYmEiLCJhY2Nlc3MiOnsidXJuOmZpbGVzdG9yZTpmaWxlOmI0N2RmYWU5LWYyMzItNDk3My05MWNkLTg1OGRiZTU5OTMwNiI6WyJyZWFkIl19LCJleHAiOjE3Nzg1MjcwNDcsIm5iZiI6MTc3ODUyNjQ0N30.nJdeXKOtetvW1kpUMAJJ42E0wyDcPIktil6o5mSQNfY&client=59d675ba-99fc-4df0-8a47-af492ed592ba&dl=true&name=requirements.md HTTP/1.1" 200 676
+2026-05-12T00:07:28Z  DEBUG     pipeline.jira_client  [jira_client.py:128] — Fetching transitions for ZHTPAI-2
+2026-05-12T00:07:28Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:07:29Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "GET /rest/api/3/issue/ZHTPAI-2/transitions HTTP/1.1" 200 None
+2026-05-12T00:07:29Z  DEBUG     pipeline.jira_client  [jira_client.py:134] — Available transitions for ZHTPAI-2: ['11:To Do', '21:In Progress', '31:In Review', '41:Done']
+2026-05-12T00:07:29Z  INFO      pipeline.jira_client  [jira_client.py:180] — Transitioning ZHTPAI-2 to 'In Progress' via transition id=21 name='In Progress'
+2026-05-12T00:07:29Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:07:30Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "POST /rest/api/3/issue/ZHTPAI-2/transitions HTTP/1.1" 204 0
+2026-05-12T00:07:30Z  INFO      pipeline.jira_client  [jira_client.py:192] — Successfully transitioned ZHTPAI-2 → In Progress
+2026-05-12T00:07:30Z  INFO      __main__  [main.py:102] — Workspace: /home/clustox/Zero-Human-Touch-Pipeline/workspace/ZHTPAI-2
+2026-05-12T00:07:30Z  INFO      __main__  [main.py:147] — [ZHTPAI-2] Stage 2 — Building app with Claude…
+2026-05-12T00:07:30Z  INFO      pipeline.builder  [builder.py:140] — Building app in workspace: /home/clustox/Zero-Human-Touch-Pipeline/workspace/ZHTPAI-2
+2026-05-12T00:07:30Z  INFO      pipeline.builder  [builder.py:98] — Calling claude CLI (model=claude-sonnet-4-6)…
+2026-05-12T00:07:32Z  ERROR     __main__  [main.py:112] — Unhandled exception for ZHTPAI-2:
+Traceback (most recent call last):
+  File "/home/clustox/Zero-Human-Touch-Pipeline/main.py", line 109, in _process_story
+    _run_all_stages(jira, issue_key, summary, requirements, workspace_dir)
+  File "/home/clustox/Zero-Human-Touch-Pipeline/main.py", line 148, in _run_all_stages
+    app_files = builder.build_app(requirements, workspace_dir)
+  File "/home/clustox/Zero-Human-Touch-Pipeline/pipeline/builder.py", line 157, in build_app
+    response_text = _call_claude(_SYSTEM_PROMPT, user_message)
+  File "/home/clustox/Zero-Human-Touch-Pipeline/pipeline/builder.py", line 114, in _call_claude
+    raise RuntimeError(
+RuntimeError: claude CLI exited with code 1:
+
+
+2026-05-12T00:07:32Z  INFO      pipeline.jira_client  [jira_client.py:228] — Adding comment to ZHTPAI-2
+2026-05-12T00:07:32Z  DEBUG     pipeline.jira_client  [jira_client.py:229] — Comment text (first 200 chars): Pipeline error for ZHTPAI-2:
+
+RuntimeError: claude CLI exited with code 1:
+
+
+The story has been returned to To Do for retry.
+2026-05-12T00:07:32Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:07:32Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "POST /rest/api/3/issue/ZHTPAI-2/comment HTTP/1.1" 201 None
+2026-05-12T00:07:32Z  INFO      pipeline.jira_client  [jira_client.py:235] — Comment added to ZHTPAI-2
+2026-05-12T00:07:32Z  DEBUG     pipeline.jira_client  [jira_client.py:128] — Fetching transitions for ZHTPAI-2
+2026-05-12T00:07:32Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:07:33Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "GET /rest/api/3/issue/ZHTPAI-2/transitions HTTP/1.1" 200 None
+2026-05-12T00:07:33Z  DEBUG     pipeline.jira_client  [jira_client.py:134] — Available transitions for ZHTPAI-2: ['11:To Do', '21:In Progress', '31:In Review', '41:Done']
+2026-05-12T00:07:33Z  INFO      pipeline.jira_client  [jira_client.py:180] — Transitioning ZHTPAI-2 to 'To Do' via transition id=11 name='To Do'
+2026-05-12T00:07:33Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:07:34Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "POST /rest/api/3/issue/ZHTPAI-2/transitions HTTP/1.1" 204 0
+2026-05-12T00:07:34Z  INFO      pipeline.jira_client  [jira_client.py:192] — Successfully transitioned ZHTPAI-2 → To Do
+2026-05-12T00:07:34Z  INFO      __main__  [main.py:295] — --- Pipeline run complete ---
+2026-05-12T00:07:34Z  INFO      __main__  [main.py:318] — Scheduler active. Press Ctrl+C to stop.
+2026-05-12T00:08:04Z  INFO      __main__  [main.py:325] — Pipeline stopped by user (KeyboardInterrupt).
+2026-05-12T00:09:19Z  DEBUG     git.cmd  [cmd.py:1286] — Popen(['git', 'version'], cwd=/home/clustox/Zero-Human-Touch-Pipeline, stdin=None, shell=False, universal_newlines=False)
+2026-05-12T00:09:19Z  DEBUG     git.cmd  [cmd.py:1286] — Popen(['git', 'version'], cwd=/home/clustox/Zero-Human-Touch-Pipeline, stdin=None, shell=False, universal_newlines=False)
+2026-05-12T00:09:19Z  INFO      __main__  [main.py:308] — Zero Human Touch Pipeline starting — polling every 5 minutes.
+2026-05-12T00:09:19Z  INFO      __main__  [main.py:268] — --- Pipeline run starting ---
+2026-05-12T00:09:19Z  DEBUG     pipeline.jira_client  [jira_client.py:39] — JiraClient initialised — project=ZHTPAI url=https://hasnibhutta95.atlassian.net
+2026-05-12T00:09:19Z  INFO      pipeline.jira_client  [jira_client.py:63] — Querying Jira for new stories — JQL: project = "ZHTPAI" AND labels = "ai-ready" AND status = "To Do"
+2026-05-12T00:09:19Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:09:20Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "POST /rest/api/3/search/jql HTTP/1.1" 200 None
+2026-05-12T00:09:20Z  INFO      pipeline.jira_client  [jira_client.py:75] — Found 1 new story/stories
+2026-05-12T00:09:20Z  INFO      __main__  [main.py:280] — Found 1 story/stories to process.
+2026-05-12T00:09:20Z  INFO      __main__  [main.py:76] — ======================================================================
+2026-05-12T00:09:20Z  INFO      __main__  [main.py:77] — Processing story: ZHTPAI-2 — [AI-PIPELINE] Todo App
+2026-05-12T00:09:20Z  INFO      __main__  [main.py:78] — ======================================================================
+2026-05-12T00:09:20Z  INFO      pipeline.jira_client  [jira_client.py:88] — Fetching attachments for ZHTPAI-2
+2026-05-12T00:09:20Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:09:20Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "GET /rest/api/3/issue/ZHTPAI-2?fields=attachment HTTP/1.1" 200 None
+2026-05-12T00:09:20Z  DEBUG     pipeline.jira_client  [jira_client.py:96] — ZHTPAI-2 has 1 attachment(s)
+2026-05-12T00:09:20Z  INFO      pipeline.jira_client  [jira_client.py:101] — Downloading requirements.md from ZHTPAI-2 (id=10033)
+2026-05-12T00:09:20Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:09:21Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "GET /rest/api/3/attachment/content/10033 HTTP/1.1" 303 None
+2026-05-12T00:09:21Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): api.media.atlassian.com:443
+2026-05-12T00:09:22Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://api.media.atlassian.com:443 "GET /file/b47dfae9-f232-4973-91cd-858dbe599306/binary?token=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI1OWQ2NzViYS05OWZjLTRkZjAtOGE0Ny1hZjQ5MmVkNTkyYmEiLCJhY2Nlc3MiOnsidXJuOmZpbGVzdG9yZTpmaWxlOmI0N2RmYWU5LWYyMzItNDk3My05MWNkLTg1OGRiZTU5OTMwNiI6WyJyZWFkIl19LCJleHAiOjE3Nzg1MjcxNjEsIm5iZiI6MTc3ODUyNjU2MX0.NXbEgywLWfThc_fMWJ0WaD5_988uzpb7xTzrFsSgQAM&client=59d675ba-99fc-4df0-8a47-af492ed592ba&dl=true&name=requirements.md HTTP/1.1" 200 676
+2026-05-12T00:09:22Z  DEBUG     pipeline.jira_client  [jira_client.py:128] — Fetching transitions for ZHTPAI-2
+2026-05-12T00:09:22Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:09:22Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "GET /rest/api/3/issue/ZHTPAI-2/transitions HTTP/1.1" 200 None
+2026-05-12T00:09:22Z  DEBUG     pipeline.jira_client  [jira_client.py:134] — Available transitions for ZHTPAI-2: ['11:To Do', '21:In Progress', '31:In Review', '41:Done']
+2026-05-12T00:09:22Z  INFO      pipeline.jira_client  [jira_client.py:180] — Transitioning ZHTPAI-2 to 'In Progress' via transition id=21 name='In Progress'
+2026-05-12T00:09:22Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:09:23Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "POST /rest/api/3/issue/ZHTPAI-2/transitions HTTP/1.1" 204 0
+2026-05-12T00:09:23Z  INFO      pipeline.jira_client  [jira_client.py:192] — Successfully transitioned ZHTPAI-2 → In Progress
+2026-05-12T00:09:23Z  INFO      __main__  [main.py:102] — Workspace: /home/clustox/Zero-Human-Touch-Pipeline/workspace/ZHTPAI-2
+2026-05-12T00:09:23Z  INFO      __main__  [main.py:147] — [ZHTPAI-2] Stage 2 — Building app with Claude…
+2026-05-12T00:09:23Z  INFO      pipeline.builder  [builder.py:142] — Building app in workspace: /home/clustox/Zero-Human-Touch-Pipeline/workspace/ZHTPAI-2
+2026-05-12T00:09:23Z  INFO      pipeline.builder  [builder.py:97] — Calling claude CLI (model=claude-sonnet-4-6)…
+2026-05-12T00:09:25Z  ERROR     __main__  [main.py:112] — Unhandled exception for ZHTPAI-2:
+Traceback (most recent call last):
+  File "/home/clustox/Zero-Human-Touch-Pipeline/main.py", line 109, in _process_story
+    _run_all_stages(jira, issue_key, summary, requirements, workspace_dir)
+  File "/home/clustox/Zero-Human-Touch-Pipeline/main.py", line 148, in _run_all_stages
+    app_files = builder.build_app(requirements, workspace_dir)
+  File "/home/clustox/Zero-Human-Touch-Pipeline/pipeline/builder.py", line 159, in build_app
+    response_text = _call_claude(_SYSTEM_PROMPT, user_message)
+  File "/home/clustox/Zero-Human-Touch-Pipeline/pipeline/builder.py", line 116, in _call_claude
+    raise RuntimeError(
+RuntimeError: claude CLI exited with code 1:
+
+
+2026-05-12T00:09:25Z  INFO      pipeline.jira_client  [jira_client.py:228] — Adding comment to ZHTPAI-2
+2026-05-12T00:09:25Z  DEBUG     pipeline.jira_client  [jira_client.py:229] — Comment text (first 200 chars): Pipeline error for ZHTPAI-2:
+
+RuntimeError: claude CLI exited with code 1:
+
+
+The story has been returned to To Do for retry.
+2026-05-12T00:09:25Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:09:26Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "POST /rest/api/3/issue/ZHTPAI-2/comment HTTP/1.1" 201 None
+2026-05-12T00:09:26Z  INFO      pipeline.jira_client  [jira_client.py:235] — Comment added to ZHTPAI-2
+2026-05-12T00:09:26Z  DEBUG     pipeline.jira_client  [jira_client.py:128] — Fetching transitions for ZHTPAI-2
+2026-05-12T00:09:26Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:09:27Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "GET /rest/api/3/issue/ZHTPAI-2/transitions HTTP/1.1" 200 None
+2026-05-12T00:09:27Z  DEBUG     pipeline.jira_client  [jira_client.py:134] — Available transitions for ZHTPAI-2: ['11:To Do', '21:In Progress', '31:In Review', '41:Done']
+2026-05-12T00:09:27Z  INFO      pipeline.jira_client  [jira_client.py:180] — Transitioning ZHTPAI-2 to 'To Do' via transition id=11 name='To Do'
+2026-05-12T00:09:27Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:09:27Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "POST /rest/api/3/issue/ZHTPAI-2/transitions HTTP/1.1" 204 0
+2026-05-12T00:09:27Z  INFO      pipeline.jira_client  [jira_client.py:192] — Successfully transitioned ZHTPAI-2 → To Do
+2026-05-12T00:09:27Z  INFO      __main__  [main.py:295] — --- Pipeline run complete ---
+2026-05-12T00:09:27Z  INFO      __main__  [main.py:318] — Scheduler active. Press Ctrl+C to stop.
+2026-05-12T00:11:52Z  INFO      __main__  [main.py:325] — Pipeline stopped by user (KeyboardInterrupt).
+2026-05-12T00:12:24Z  DEBUG     git.cmd  [cmd.py:1286] — Popen(['git', 'version'], cwd=/home/clustox/Zero-Human-Touch-Pipeline, stdin=None, shell=False, universal_newlines=False)
+2026-05-12T00:12:24Z  DEBUG     git.cmd  [cmd.py:1286] — Popen(['git', 'version'], cwd=/home/clustox/Zero-Human-Touch-Pipeline, stdin=None, shell=False, universal_newlines=False)
+2026-05-12T00:12:24Z  INFO      __main__  [main.py:308] — Zero Human Touch Pipeline starting — polling every 5 minutes.
+2026-05-12T00:12:24Z  INFO      __main__  [main.py:268] — --- Pipeline run starting ---
+2026-05-12T00:12:24Z  DEBUG     pipeline.jira_client  [jira_client.py:39] — JiraClient initialised — project=ZHTPAI url=https://hasnibhutta95.atlassian.net
+2026-05-12T00:12:24Z  INFO      pipeline.jira_client  [jira_client.py:63] — Querying Jira for new stories — JQL: project = "ZHTPAI" AND labels = "ai-ready" AND status = "To Do"
+2026-05-12T00:12:24Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:12:25Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "POST /rest/api/3/search/jql HTTP/1.1" 200 None
+2026-05-12T00:12:25Z  INFO      pipeline.jira_client  [jira_client.py:75] — Found 1 new story/stories
+2026-05-12T00:12:25Z  INFO      __main__  [main.py:280] — Found 1 story/stories to process.
+2026-05-12T00:12:25Z  INFO      __main__  [main.py:76] — ======================================================================
+2026-05-12T00:12:25Z  INFO      __main__  [main.py:77] — Processing story: ZHTPAI-2 — [AI-PIPELINE] Todo App
+2026-05-12T00:12:25Z  INFO      __main__  [main.py:78] — ======================================================================
+2026-05-12T00:12:25Z  INFO      pipeline.jira_client  [jira_client.py:88] — Fetching attachments for ZHTPAI-2
+2026-05-12T00:12:25Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:12:25Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "GET /rest/api/3/issue/ZHTPAI-2?fields=attachment HTTP/1.1" 200 None
+2026-05-12T00:12:25Z  DEBUG     pipeline.jira_client  [jira_client.py:96] — ZHTPAI-2 has 1 attachment(s)
+2026-05-12T00:12:25Z  INFO      pipeline.jira_client  [jira_client.py:101] — Downloading requirements.md from ZHTPAI-2 (id=10033)
+2026-05-12T00:12:25Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:12:26Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "GET /rest/api/3/attachment/content/10033 HTTP/1.1" 303 None
+2026-05-12T00:12:26Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): api.media.atlassian.com:443
+2026-05-12T00:12:27Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://api.media.atlassian.com:443 "GET /file/b47dfae9-f232-4973-91cd-858dbe599306/binary?token=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI1OWQ2NzViYS05OWZjLTRkZjAtOGE0Ny1hZjQ5MmVkNTkyYmEiLCJhY2Nlc3MiOnsidXJuOmZpbGVzdG9yZTpmaWxlOmI0N2RmYWU5LWYyMzItNDk3My05MWNkLTg1OGRiZTU5OTMwNiI6WyJyZWFkIl19LCJleHAiOjE3Nzg1MjczNDYsIm5iZiI6MTc3ODUyNjc0Nn0.jANzfcS0hH_R7qla-xfd2SiKiJbLeld6axio8Vl2z8s&client=59d675ba-99fc-4df0-8a47-af492ed592ba&dl=true&name=requirements.md HTTP/1.1" 200 676
+2026-05-12T00:12:27Z  DEBUG     pipeline.jira_client  [jira_client.py:128] — Fetching transitions for ZHTPAI-2
+2026-05-12T00:12:27Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:12:27Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "GET /rest/api/3/issue/ZHTPAI-2/transitions HTTP/1.1" 200 None
+2026-05-12T00:12:27Z  DEBUG     pipeline.jira_client  [jira_client.py:134] — Available transitions for ZHTPAI-2: ['11:To Do', '21:In Progress', '31:In Review', '41:Done']
+2026-05-12T00:12:27Z  INFO      pipeline.jira_client  [jira_client.py:180] — Transitioning ZHTPAI-2 to 'In Progress' via transition id=21 name='In Progress'
+2026-05-12T00:12:27Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:12:28Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "POST /rest/api/3/issue/ZHTPAI-2/transitions HTTP/1.1" 204 0
+2026-05-12T00:12:28Z  INFO      pipeline.jira_client  [jira_client.py:192] — Successfully transitioned ZHTPAI-2 → In Progress
+2026-05-12T00:12:28Z  INFO      __main__  [main.py:102] — Workspace: /home/clustox/Zero-Human-Touch-Pipeline/workspace/ZHTPAI-2
+2026-05-12T00:12:28Z  INFO      __main__  [main.py:147] — [ZHTPAI-2] Stage 2 — Building app with Claude…
+2026-05-12T00:12:28Z  INFO      pipeline.builder  [builder.py:145] — Building app in workspace: /home/clustox/Zero-Human-Touch-Pipeline/workspace/ZHTPAI-2
+2026-05-12T00:12:28Z  INFO      pipeline.builder  [builder.py:97] — Calling claude CLI (model=claude-sonnet-4-6)…
+2026-05-12T00:12:30Z  ERROR     __main__  [main.py:112] — Unhandled exception for ZHTPAI-2:
+Traceback (most recent call last):
+  File "/home/clustox/Zero-Human-Touch-Pipeline/main.py", line 109, in _process_story
+    _run_all_stages(jira, issue_key, summary, requirements, workspace_dir)
+  File "/home/clustox/Zero-Human-Touch-Pipeline/main.py", line 148, in _run_all_stages
+    app_files = builder.build_app(requirements, workspace_dir)
+  File "/home/clustox/Zero-Human-Touch-Pipeline/pipeline/builder.py", line 162, in build_app
+    response_text = _call_claude(_SYSTEM_PROMPT, user_message)
+  File "/home/clustox/Zero-Human-Touch-Pipeline/pipeline/builder.py", line 118, in _call_claude
+    raise RuntimeError(
+RuntimeError: claude CLI exited with code 1:
+STDERR: 
+STDOUT: Credit balance is too low
+
+
+2026-05-12T00:12:30Z  INFO      pipeline.jira_client  [jira_client.py:228] — Adding comment to ZHTPAI-2
+2026-05-12T00:12:30Z  DEBUG     pipeline.jira_client  [jira_client.py:229] — Comment text (first 200 chars): Pipeline error for ZHTPAI-2:
+
+RuntimeError: claude CLI exited with code 1:
+STDERR: 
+STDOUT: Credit balance is too low
+
+
+The story has been returned to To Do for retry.
+2026-05-12T00:12:30Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:12:30Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "POST /rest/api/3/issue/ZHTPAI-2/comment HTTP/1.1" 201 None
+2026-05-12T00:12:30Z  INFO      pipeline.jira_client  [jira_client.py:235] — Comment added to ZHTPAI-2
+2026-05-12T00:12:30Z  DEBUG     pipeline.jira_client  [jira_client.py:128] — Fetching transitions for ZHTPAI-2
+2026-05-12T00:12:30Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:12:31Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "GET /rest/api/3/issue/ZHTPAI-2/transitions HTTP/1.1" 200 None
+2026-05-12T00:12:31Z  DEBUG     pipeline.jira_client  [jira_client.py:134] — Available transitions for ZHTPAI-2: ['11:To Do', '21:In Progress', '31:In Review', '41:Done']
+2026-05-12T00:12:31Z  INFO      pipeline.jira_client  [jira_client.py:180] — Transitioning ZHTPAI-2 to 'To Do' via transition id=11 name='To Do'
+2026-05-12T00:12:31Z  DEBUG     urllib3.connectionpool  [connectionpool.py:1062] — Starting new HTTPS connection (1): hasnibhutta95.atlassian.net:443
+2026-05-12T00:12:32Z  DEBUG     urllib3.connectionpool  [connectionpool.py:544] — https://hasnibhutta95.atlassian.net:443 "POST /rest/api/3/issue/ZHTPAI-2/transitions HTTP/1.1" 204 0
+2026-05-12T00:12:32Z  INFO      pipeline.jira_client  [jira_client.py:192] — Successfully transitioned ZHTPAI-2 → To Do
+2026-05-12T00:12:32Z  INFO      __main__  [main.py:295] — --- Pipeline run complete ---
+2026-05-12T00:12:32Z  INFO      __main__  [main.py:318] — Scheduler active. Press Ctrl+C to stop.
+2026-05-12T00:15:59Z  INFO      __main__  [main.py:325] — Pipeline stopped by user (KeyboardInterrupt).
