@@ -85,7 +85,10 @@ Open `.env` and set the following values:
 JIRA_URL=https://yourorg.atlassian.net
 JIRA_EMAIL=you@yourorg.com
 JIRA_API_TOKEN=your_jira_api_token
-JIRA_PROJECT_KEY=ZHTP
+JIRA_PROJECT_KEY=project_key
+
+# ── AnthoripicAPI ────────────────────────────────────────────────────────────────────
+ANTHROPIC_API_KEY=sk-an....
 
 # GitHub
 GITHUB_TOKEN=ghp_your_github_personal_access_token
